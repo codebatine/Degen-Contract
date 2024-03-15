@@ -1,19 +1,4 @@
-# Degen Contract
-
-## What is this?
-
-A project to practice React with a Solidity smart contract, Metamask and Ethers.js.
-
-## Installation
-
-1. npm install
-
-2. npm install --save ethers
-
-3. OPTIONAL: If you want to make your own Solidity contract edit this one below. It's also available in the 'assets' folder. Then deploy the contract on Sepolia via Remix.
-
-```
-SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.4.22 <0.9.0;
 
 contract DegenContract {
@@ -60,16 +45,3 @@ contract DegenContract {
         createDegen("Peco", "make crypto scary again", true);
     }
 }
-```
-
-4. Change the contract address in the config.js on the last line
-
-```
-export const contractAddress = 'YOUR SMART CONTRACT ADDRESS';
-```
-
-5. Have fun degening! :desert_island:
-
-## Screenshot :camera_flash:
-
-![Degen Contract screenshot](./src/assets/degen-contract-screenshot.webp)
