@@ -78,15 +78,15 @@ export const contractAddress = 'YOUR SMART CONTRACT ADDRESS';
 
 ## 1. Open the terminal and type in this in the terminal:
 
-git clone https://github.com/codebatine/Degen-Contract.git
-cd Degen-Contract
-npm install
-npm install hardhat
-npx hardhat init
+1. git clone https://github.com/codebatine/Degen-Contract.git
+2. cd Degen-Contract
+3. npm install
+4. npm install hardhat
+5. npx hardhat init
 
 choose Javascript
 
-npm run dev
+6. npm run dev
 
 Stay inside this folder rest step by step guide.
 
@@ -106,4 +106,6 @@ npx hardhat run --network localhost scripts/deploy.cjs
 
 ## 6. Now you can add and remove Degens
 
-## For Nonce errors. Go to metamask advance settings push "clear activity tab data" button then try to add and remove Degens.
+## For Nonce errors.
+
+Go to metamask advance settings push "clear activity tab data" button then try to add and remove Degens.
