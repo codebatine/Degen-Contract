@@ -73,3 +73,35 @@ export const contractAddress = 'YOUR SMART CONTRACT ADDRESS';
 ## Screenshot :camera_flash:
 
 ![Degen Contract screenshot](./src/assets/degen-contract-screenshot.webp)
+
+# OPTIONAL: If you want to deploy on you own Hardhat node
+
+### 1. Open the terminal and type in this in the terminal:
+
+git clone https://github.com/codebatine/Degen-Contract.git
+cd Degen-Contract
+npm install
+npm install hardhat
+npx hardhat init
+
+now choose Javascript
+
+npm run dev
+
+### 2. Open a new Terminal. Compile your contract in the new terminal:
+
+npx hardhat compile
+
+### 3. Spin up a local blockchain in terminal:
+
+npx hardhat node
+
+### 4. Deploy your contract to the local blockchain: Open up third Terminal.
+
+npx hardhat run --network localhost scripts/deploy.cjs
+
+### 5. Change the contract address in the config.js on the last line (line: 176).
+
+### 6. Start to add and remove Degens
+
+## For Nonce errors. Go to metamask advance settings push "clear activity tab data" button then try to add and remove Degens.
