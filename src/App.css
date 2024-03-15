@@ -1,6 +1,6 @@
 :root {
   --primary-color: #800080;
-  --secondary-color: #0000FF; /* Blue */
+  --secondary-color: #0000FF;
   --padding-standard: 0.8rem;
   --border-radius-standard: 10px;
   --button-padding: 10px 20px;
@@ -25,6 +25,26 @@ body {
   background-blend-mode: normal, lighten, multiply, hard-light;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.app-container {
+  margin: -700px auto 0;
+}
+
+.spinning-D {
+  font-size: 15rem;
+  animation: spin 5s infinite linear;
+  transform-origin: center center;
+
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(1turn);
+  }
 }
 
 .degen-container {
@@ -71,6 +91,10 @@ button {
 
 button:hover {
   background-color: var(--secondary-color);
+}
+
+.add-degen-form button:hover {
+  background-color: #000099;
 }
 
 .remove-button {

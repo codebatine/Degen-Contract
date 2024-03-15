@@ -82,33 +82,36 @@ function App() {
   };
 
   return (
-    <div className="degen-container">
-      <h1>Degen Contract</h1>
-      {wallet?.accounts.length > 0 && (
-        <div className="wallet-info">
-          <div>
-            <span>Wallet Address:</span>
-            <br></br> {wallet.accounts[0]}
+    <div className="app-container">
+      <div className="spinning-D">D</div>
+      <div className="degen-container">
+        <h1>Degen Contract</h1>
+        {wallet?.accounts.length > 0 && (
+          <div className="wallet-info">
+            <div>
+              <span>Wallet Address:</span>
+              <br></br> {wallet.accounts[0]}
+            </div>
+            <p>
+              <span>Balance:</span>
+              <br></br> {wallet.balance}
+            </p>
           </div>
-          <p>
-            <span>Balance:</span>
-            <br></br> {wallet.balance}
-          </p>
-        </div>
-      )}
+        )}
 
-      {writeContract && (
-        <Degens
-          degens={degens}
-          contract={writeContract}
+        {writeContract && (
+          <Degens
+            degens={degens}
+            contract={writeContract}
+            populateDegens={populateDegens}
+          />
+        )}
+
+        <AddDegen
+          writeContract={writeContract}
           populateDegens={populateDegens}
         />
-      )}
-
-      <AddDegen
-        writeContract={writeContract}
-        populateDegens={populateDegens}
-      />
+      </div>
     </div>
   );
 }

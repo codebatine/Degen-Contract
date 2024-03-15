@@ -6,9 +6,9 @@ A project to practice React with a Solidity smart contract, Metamask and Ethers.
 
 ## Installation
 
-1. npm install
+1. npm i -y
 
-2. npm install --save ethers
+2. npm i --save ethers
 
 3. OPTIONAL: If you want to make your own Solidity contract edit this one below. It's also available in the 'assets' folder. Then deploy the contract on Sepolia via Remix.
 
