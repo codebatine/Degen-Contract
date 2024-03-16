@@ -12,7 +12,7 @@ A project to practice React with Hardhat, Solidity smart contract, Metamask and 
 
 2. Navigate to the Project Directory
 
-   `cd repository`
+   `cd Degen-Contract`
 
 3. Install Dependencies
 
@@ -39,7 +39,7 @@ A project to practice React with Hardhat, Solidity smart contract, Metamask and 
 
 7. Then deploy them to the Hardhat Network with:
 
-   `npx hardhat run scripts/deploy.js --network localhost`
+   `npx hardhat run --network localhost scripts/deploy.js`
 
    Replace scripts/deploy.js with the path to your deployment script.
 
@@ -51,7 +51,7 @@ A project to practice React with Hardhat, Solidity smart contract, Metamask and 
 
 9. Run the Project
 
-   `npm start`
+   `npm run dev`
 
 ## Screenshot :camera_flash:
 
