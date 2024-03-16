@@ -2,110 +2,57 @@
 
 ## What is this?
 
-A project to practice React with a Solidity smart contract, Metamask and Ethers.js.
+A project to practice React with Hardhat, Solidity smart contract, Metamask and Ethers.js.
 
 ## Installation
 
-1. npm i -y
+1. Clone the Repository
 
-2. npm i --save ethers
+   `git clone https://github.com/codebatine/Degen-Contract.git`
 
-3. OPTIONAL: If you want to make your own Solidity contract edit this one below. It's also available in the 'assets' folder. Then deploy the contract on Sepolia via Remix.
+2. Navigate to the Project Directory
 
-```
-SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+   `cd repository`
 
-contract DegenContract {
-    uint nextId = 0;
-    uint public numberOfDegens = 0;
+3. Install Dependencies
 
-    struct Degen {
-        uint id;
-        string nickname;
-        string tagline;
-        bool isHodler;
-    }
+   `npm i -y`
 
-    event DegenCreated(uint id);
-    event DegenDeleted(uint id);
-    event DegensIndex(uint[] ids);
+4. Install Hardhat
 
-    mapping(uint => Degen) public degens;
-    uint[] public degenList;
+   `npm i hardhat`
 
-    function createDegen(
-        string memory _nickname,
-        string memory _tagline,
-        bool _isHodler
-    ) public {
-        nextId++;
-        numberOfDegens++;
-        degens[nextId] = Degen(nextId, _nickname, _tagline, _isHodler);
-        degenList.push(nextId);
-        emit DegenCreated(nextId);
-    }
+5. Set Up Metamask
 
-    function removeDegen(uint id) public {
-        numberOfDegens--;
-        delete degens[id];
-        emit DegenDeleted(id);
-    }
+   - Install the Metamask extension for your browser.
+   - Create an account or import an existing one.
+   - Connect to the Hardhat Network by clicking on the network dropdown (usually it will say "Ethereum Mainnet").
+   - Select "Custom RPC" to add the Hardhat Network details:
+     - Network Name: Hardhat
+     - New RPC URL: http://localhost:8545
+     - Chain ID: 31337
+     - Currency Symbol (optional): ETH
 
-    function getIndexList() public view returns (uint[] memory) {
-        return degenList;
-    }
+6. Compile your smart contracts with:
 
-    constructor() {
-        createDegen("Peco", "make crypto scary again", true);
-    }
-}
-```
+   `npx hardhat compile`
 
-4. Change the contract address in the config.js on the last line
+7. Then deploy them to the Hardhat Network with:
 
-```
-export const contractAddress = 'YOUR SMART CONTRACT ADDRESS';
-```
+   `npx hardhat run scripts/deploy.js --network localhost`
 
-5. Have fun degening! :desert_island:
+   Replace scripts/deploy.js with the path to your deployment script.
+
+8. Update the Smart Contract Address
+
+   After deploying your smart contracts, Hardhat will output the address of the deployed contract. You need to take this address and update your application's configuration to use it.
+
+   Open the `config.js` file (or wherever your contract address is stored), and replace the existing contract address with the new one.
+
+9. Run the Project
+
+   `npm start`
 
 ## Screenshot :camera_flash:
 
-![Degen Contract screenshot](./src/assets/degen-contract-screenshot.webp)
-
-# OPTIONAL: If you want to deploy on you own Hardhat blockchain node
-
-## 1. Open the terminal and type in this in the terminal:
-
-1. git clone https://github.com/codebatine/Degen-Contract.git
-2. cd Degen-Contract
-3. npm install
-4. npm install hardhat
-5. npx hardhat init
-
-choose Javascript
-
-6. npm run dev
-
-Stay inside this folder rest step by step guide.
-
-## 2. Open a new Terminal. Compile your contract in the new terminal:
-
-npx hardhat compile
-
-## 3. Spin up a local blockchain in terminal:
-
-npx hardhat node
-
-## 4. Deploy your contract to the local blockchain: Open up third Terminal.
-
-npx hardhat run --network localhost scripts/deploy.cjs
-
-## 5. Change the contract address in the config.js on the last line (line: 176).
-
-## 6. Now you can add and remove Degens
-
-## For Nonce errors.
-
-Go to metamask advance settings push "clear activity tab data" button then try to add and remove Degens.
+![Degen Contract Screenshot](./src/assets/degen-contract-screenshot.jpg)
