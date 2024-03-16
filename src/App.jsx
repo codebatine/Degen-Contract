@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { abi, contractAddress } from './config.js';
 import { Degens } from './components/Degens';
 import { AddDegen } from './components/AddDegen.jsx';
+import Nav from './components/Nav.jsx';
+
 
 if (window.ethereum) {
   window.provider = new ethers.BrowserProvider(window.ethereum);
@@ -88,6 +90,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <Nav />
       <div className="spinning-D">D</div>
       <div className="degen-container">
         <h1>Degen Contract</h1>
@@ -112,12 +115,12 @@ function App() {
           />
         )}
 
-{writeContract && (
-  <AddDegen
-    writeContract={writeContract}
-    populateDegens={populateDegens}
-  />
-)}
+        {writeContract && (
+          <AddDegen
+            writeContract={writeContract}
+            populateDegens={populateDegens}
+          />
+        )}
       </div>
     </div>
   );

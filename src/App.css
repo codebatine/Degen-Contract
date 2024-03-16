@@ -4,6 +4,10 @@
   --padding-standard: 0.8rem;
   --border-radius-standard: 10px;
   --button-padding: 10px 20px;
+  --primary-color-dark: #300030;
+  --secondary-color-dark: #000033;
+  --background-color-dark: #000000;
+  --text-color-dark: #ffffff;
 }
 
 #root, .degen-container {
@@ -25,6 +29,57 @@ body {
   background-blend-mode: normal, lighten, multiply, hard-light;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.dark-mode {
+  --primary-color: var(--primary-color-dark);
+  --secondary-color: var(--secondary-color-dark);
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+.toggle-dark-mode {
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+.toggle-dark-mode.dark {
+  background-color: #fff;
+  color: #000;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--text-color-dark);
+  padding: 10px;
+  z-index: 1;
+}
+
+.navbar a {
+  color: var(--text-color-dark);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: var(--text-color-dark);
+  cursor: pointer;
+}
+
+.dark-mode .navbar {
+  background-color: var(--primary-color-dark);
+  color: var(--text-color-dark);
 }
 
 .app-container {
@@ -87,6 +142,8 @@ button {
   cursor: pointer;
   margin-top: 20px;
   transition: color 0.12s ease;
+  background-color: var(--primary-color-dark);
+  color: var(--text-color-dark);
 }
 
 button:hover {
