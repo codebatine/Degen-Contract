@@ -61,6 +61,11 @@ function App() {
   const populateDegens = useCallback(async () => {
     let indexes = await readContract['getIndexList']();
 
+    if (!indexes || indexes.length === 0) {
+      console.log('No indexes returned from getIndexList');
+      return;
+    }
+
     let temp = [];
     for (let i = 0; i < indexes.length; i++) {
       const degen = await readContract['degens'](indexes[i]);
@@ -107,10 +112,12 @@ function App() {
           />
         )}
 
-        <AddDegen
-          writeContract={writeContract}
-          populateDegens={populateDegens}
-        />
+{writeContract && (
+  <AddDegen
+    writeContract={writeContract}
+    populateDegens={populateDegens}
+  />
+)}
       </div>
     </div>
   );
