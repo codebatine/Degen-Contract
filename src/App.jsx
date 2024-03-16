@@ -6,6 +6,7 @@ import { abi, contractAddress } from './config.js';
 import { Degens } from './components/Degens';
 import { AddDegen } from './components/AddDegen.jsx';
 import Nav from './components/Nav.jsx';
+import Footer from './components/Footer.jsx';
 
 
 if (window.ethereum) {
@@ -122,6 +123,7 @@ function App() {
           />
         )}
       </div>
+      <Footer />
     </div>
   );
 }
