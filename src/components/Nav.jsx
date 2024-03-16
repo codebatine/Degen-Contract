@@ -1,4 +1,4 @@
-import DarkMode from './Darkmode.jsx';
+import DarkMode from './DarkMode.jsx';
 
 const Nav = () => {
   return (
